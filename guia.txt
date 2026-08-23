@@ -1,0 +1,37 @@
+c1. Entre no projeto
+cd ~/atheris
+2. Instale o suporte para ambientes virtuais
+
+No Linux Mint/Ubuntu:
+
+sudo apt update
+sudo apt install python3-venv
+
+Se pedir senha, é a senha do seu usuário do Linux.
+
+3. Crie o ambiente virtual
+
+Dentro de interpretacao:
+
+python3 -m venv .venv
+
+Depois ative:
+
+source .venv/bin/activate
+
+Seu terminal deverá ficar parecido com:
+
+(.venv) alex@alex-System-Product-Name:~/san_auxiliares/interpretacao$
+4. Atualize o pip
+python -m pip install --upgrade pip
+
+Agora python deverá funcionar dentro do ambiente virtual, mesmo que não exista no sistema global.
+
+Teste:
+
+python --version
+pip --version
+5. Instale o pytest
+pip install pytest
+
+pytest -s -v testes/test_personagem.py::test_percepcao_respeita_limites_da_intensidade
