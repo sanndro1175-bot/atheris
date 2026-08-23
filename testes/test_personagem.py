@@ -177,6 +177,21 @@ def test_percepcao_nao_carrega_dados_do_evento_anterior():
     assert resultado_cheiro["tipo"] == "cheiro"
     assert resultado_cheiro["intensidade"] == 27
 
+def test_percepcao_nao_altera_intensidade_do_evento():
+    kael = Personagem("Kael", "Bárbaro")
+
+    evento = Evento(
+        "som",
+        intensidade=80,
+        caracteristica="batida"
+    )
+
+    percepcao = Percepcao()
+
+    percepcao.observar(kael, evento)
+
+    assert evento.intensidade == 80
+
 def test_percepcao_preserva_caracteristica_do_evento():
     kael = Personagem("Kael", "Bárbaro")
 
